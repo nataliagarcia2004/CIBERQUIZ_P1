@@ -27,7 +27,7 @@ public class Pregunta4 extends AppCompatActivity {
         String respuesta = respuestaButton.getText().toString();
 
 
-        String respuestaCorrecta = "Gyozas";
+        String respuestaCorrecta = "HTTPS";
 
         if (respuesta.equals(respuestaCorrecta)) {
             puntuacion += 3;

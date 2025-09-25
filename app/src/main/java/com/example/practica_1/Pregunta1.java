@@ -24,7 +24,7 @@ public class Pregunta1 extends AppCompatActivity {
     public void responderPregunta(View view) {
         Button respuestaButton = (Button) view;
         String respuesta = respuestaButton.getText().toString();
-        String respuestaCorrecta = "Arroz"; // En esta pregunta la respuesta es arroz
+        String respuestaCorrecta = "M1c0ntr4s3ñ4!"; // En esta pregunta la respuesta es M1c0ntr4s3ñ4!
 
         if (respuesta.equals(respuestaCorrecta)) {
             puntuacion += 3;

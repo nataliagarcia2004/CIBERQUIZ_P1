@@ -25,11 +25,11 @@ public class Pregunta3 extends AppCompatActivity {
         if (view.getId() == R.id.option1Image) {
             // Opción 1
             puntuacion -= 2;
-            Toast.makeText(this, "Error: Harina es incorrecto. Has perdido 2 puntos.", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Error: Matrícula gimansio es incorrecto. Has perdido 2 puntos.", Toast.LENGTH_SHORT).show();
         } else if (view.getId() == R.id.option2Image) {
             // Opción 2
             puntuacion -= 2;
-            Toast.makeText(this, "Error: Levadura es incorrecto. Has perdido 2 puntos.", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Error: LOWI es incorrecto. Has perdido 2 puntos.", Toast.LENGTH_SHORT).show();
         } else if (view.getId() == R.id.option3Image) {
             // Opción 3 (Correcta)
             puntuacion += 3;
@@ -38,7 +38,7 @@ public class Pregunta3 extends AppCompatActivity {
         } else if (view.getId() == R.id.option4Image) {
             // Opción 4
             puntuacion -= 2;
-            Toast.makeText(this, "Error: Agua es incorrecto. Has perdido 2 puntos.", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Error: Seguridad social es incorrecto. Has perdido 2 puntos.", Toast.LENGTH_SHORT).show();
         }
     }
 

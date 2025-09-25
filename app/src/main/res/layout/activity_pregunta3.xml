@@ -14,122 +14,123 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:scaleType="centerCrop"
-        android:src="@drawable/fondociber"
+        android:src="@drawable/fondo_preguntas"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="72dp"
         android:text="PREGUNTA 3"
         android:textSize="24sp"
         android:textStyle="bold"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="200dp" />
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/question3Button"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:backgroundTint="#c2b19c"
-        android:text="¿Cuál de estos ingredientes no es necesario para hacer pan?"
-        app:layout_constraintTop_toBottomOf="@id/textView4"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="32dp"
-        android:textSize="17sp"/>
+        android:backgroundTint="#c2b19c"
+        android:text="¿Cuál de estos  sms es un ejemplo de phishing?"
+        android:textSize="17sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textView4" />
 
 
     <ImageButton
         android:id="@+id/option1Image"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
-        android:scaleType="centerCrop"
-        android:contentDescription="Imagen de Harina"
-        android:src="@drawable/harina"
+        android:layout_width="280dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="76dp"
+        android:layout_marginTop="116dp"
         android:background="@android:color/transparent"
-        app:layout_constraintTop_toBottomOf="@id/textView4"
+        android:contentDescription="imagenphissingGYM"
+        android:onClick="onOptionSelected"
+        android:scaleType="centerCrop"
+        android:src="@drawable/fotophissing1"
         app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginTop="110dp"
-        android:layout_marginStart="80dp"
-        android:onClick="onOptionSelected" />
+        app:layout_constraintTop_toBottomOf="@id/textView4" />
 
     <ImageButton
         android:id="@+id/option2Image"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
-        android:scaleType="centerCrop"
-        android:contentDescription="Imagen de Levadura"
-        android:src="@drawable/levadura"
+        android:layout_width="280dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="12dp"
         android:background="@android:color/transparent"
-        app:layout_constraintTop_toBottomOf="@id/textView4"
-        app:layout_constraintStart_toEndOf="@+id/option1Image"
-        android:layout_marginTop="110dp"
-        android:layout_marginStart="15dp"
-        android:onClick="onOptionSelected" />
+        android:contentDescription="fotophissingLOWI"
+        android:onClick="onOptionSelected"
+        android:scaleType="centerCrop"
+        android:src="@drawable/fotophissing2"
+        app:layout_constraintStart_toStartOf="@+id/option1Image"
+        app:layout_constraintTop_toBottomOf="@+id/option1Image" />
 
     <ImageButton
         android:id="@+id/option3Image"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
-        android:scaleType="centerCrop"
-        android:contentDescription="Imagen de Miel"
-        android:src="@drawable/miel"
-        android:background="@android:color/transparent"
-        app:layout_constraintTop_toBottomOf="@+id/option1Image"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginTop="15dp"
+        android:layout_width="280dp"
+        android:layout_height="100dp"
         android:layout_marginStart="80dp"
+        android:layout_marginTop="12dp"
+        android:background="@android:color/transparent"
+        android:contentDescription="fotophissingDGT"
         android:onClick="onOptionSelected"
-        />
+        android:scaleType="centerCrop"
+        android:src="@drawable/fotophissing3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/option2Image" />
 
     <ImageButton
         android:id="@+id/option4Image"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
-        android:scaleType="centerCrop"
-        android:contentDescription="Imagen de Agua"
-        android:src="@drawable/agua"
+        android:layout_width="280dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="16dp"
         android:background="@android:color/transparent"
-        app:layout_constraintTop_toBottomOf="@+id/option2Image"
-        app:layout_constraintStart_toEndOf="@+id/option3Image"
-        android:layout_marginTop="15dp"
-        android:layout_marginStart="15dp"
-        android:onClick="onOptionSelected" />
-
+        android:contentDescription="fotophissingSEGSOC"
+        android:onClick="onOptionSelected"
+        android:scaleType="centerCrop"
+        android:src="@drawable/fotophissing4"
+        app:layout_constraintStart_toStartOf="@+id/option3Image"
+        app:layout_constraintTop_toBottomOf="@+id/option3Image" />
 
     <Button
         android:id="@+id/button8"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="620dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="680dp"
         android:backgroundTint="#808080"
-        android:textColor="#FFFFFF"
         android:onClick="Pregunta3_Menu"
         android:text="Salir Quiz"
+        android:textColor="#FFFFFF"
+        android:textSize="15sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:textSize="15sp" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/button9"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="620dp"
-        android:layout_marginEnd="50dp"
+        android:layout_marginTop="680dp"
+        android:layout_marginEnd="4dp"
         android:backgroundTint="#D9C8A3"
-        android:textColor="#FFFFFF"
         android:onClick="Pregunta3_Pregunta4"
         android:text="Siguiente"
+        android:textColor="#FFFFFF"
+        android:textSize="15sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:textSize="15sp"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 

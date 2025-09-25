@@ -13,7 +13,7 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:scaleType="centerCrop"
-        android:src="@drawable/fondociber"
+        android:src="@drawable/fondo_preguntas"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -35,69 +35,69 @@
         android:id="@+id/question5Button"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:backgroundTint="#c2b19c"
-        android:text="¿Qué fruta era conocida como la 'manzana del amor'cuando llegó a Europa?"
-        app:layout_constraintTop_toBottomOf="@id/textView6"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="32dp"
-        android:textSize="17sp"/>
+        android:backgroundTint="#c2b19c"
+        android:text="¿Qué acción es recomendable para proteger tu cuenta online?"
+        android:textSize="17sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textView6" />
 
     <Button
         android:id="@+id/option5.1Button"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:textColor="#FFFFFF"
-        android:backgroundTint="#A3C09A"
-        android:text="Uva"
-        app:layout_constraintTop_toBottomOf="@id/question5Button"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="25dp"
+        android:backgroundTint="#A3C09A"
         android:onClick="responderPregunta"
-        android:textSize="17sp"/>
+        android:text="Cambiar clave"
+        android:textColor="#FFFFFF"
+        android:textSize="17sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/question5Button" />
 
     <Button
         android:id="@+id/option5.2Button"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:textColor="#FFFFFF"
-        android:backgroundTint="#A3C09A"
-        android:text="Fresa"
-        app:layout_constraintTop_toBottomOf="@id/option5.1Button"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="8dp"
+        android:backgroundTint="#A3C09A"
         android:onClick="responderPregunta"
-        android:textSize="17sp"/>
+        android:text="Usar PIN"
+        android:textColor="#FFFFFF"
+        android:textSize="17sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/option5.1Button" />
 
     <Button
         android:id="@+id/option5.3Button"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:textColor="#FFFFFF"
-        android:backgroundTint="#A3C09A"
-        android:text="Tomate"
-        app:layout_constraintTop_toBottomOf="@id/option5.2Button"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="8dp"
+        android:backgroundTint="#A3C09A"
         android:onClick="responderPregunta"
-        android:textSize="17sp"/>
+        android:text="Verificación 2FA"
+        android:textColor="#FFFFFF"
+        android:textSize="17sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/option5.2Button" />
 
     <Button
         android:id="@+id/option5.4Button"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:textColor="#FFFFFF"
-        android:backgroundTint="#A3C09A"
-        android:text="Granada"
-        app:layout_constraintTop_toBottomOf="@id/option5.3Button"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="8dp"
+        android:backgroundTint="#A3C09A"
         android:onClick="responderPregunta"
-        android:textSize="17sp"/>
+        android:text="Antivirus"
+        android:textColor="#FFFFFF"
+        android:textSize="17sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/option5.3Button" />
 
     <Button
         android:id="@+id/button14"

@@ -12,6 +12,7 @@
         android:layout_height="match_parent"
         android:background="@drawable/plato"
         android:scaleType="centerCrop"
+        app:srcCompat="@drawable/fondo_iniciarsesion"
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="16dp" />
 

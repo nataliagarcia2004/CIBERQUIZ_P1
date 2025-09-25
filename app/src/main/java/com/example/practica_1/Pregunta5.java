@@ -25,7 +25,7 @@ public class Pregunta5 extends AppCompatActivity {
         Button respuestaButton = (Button) view;
         String respuesta = respuestaButton.getText().toString();
 
-        String respuestaCorrecta = "Tomate";
+        String respuestaCorrecta = "Verificación 2FA";
 
 
         if (respuesta.equals(respuestaCorrecta)) {
