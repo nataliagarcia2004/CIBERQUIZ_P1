@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/pregunta5"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Pregunta5">
+
+    <ImageView
+        android:id="@+id/background_image"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/fondo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="PREGUNTA 5"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="200dp" />
+
+    <Button
+        android:id="@+id/question5Button"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#c2b19c"
+        android:text="¿Qué fruta era conocida como la 'manzana del amor'cuando llegó a Europa?"
+        app:layout_constraintTop_toBottomOf="@id/textView6"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="32dp"
+        android:textSize="17sp"/>
+
+    <Button
+        android:id="@+id/option5.1Button"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:textColor="#FFFFFF"
+        android:backgroundTint="#A3C09A"
+        android:text="Uva"
+        app:layout_constraintTop_toBottomOf="@id/question5Button"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="25dp"
+        android:onClick="responderPregunta"
+        android:textSize="17sp"/>
+
+    <Button
+        android:id="@+id/option5.2Button"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:textColor="#FFFFFF"
+        android:backgroundTint="#A3C09A"
+        android:text="Fresa"
+        app:layout_constraintTop_toBottomOf="@id/option5.1Button"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="8dp"
+        android:onClick="responderPregunta"
+        android:textSize="17sp"/>
+
+    <Button
+        android:id="@+id/option5.3Button"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:textColor="#FFFFFF"
+        android:backgroundTint="#A3C09A"
+        android:text="Tomate"
+        app:layout_constraintTop_toBottomOf="@id/option5.2Button"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="8dp"
+        android:onClick="responderPregunta"
+        android:textSize="17sp"/>
+
+    <Button
+        android:id="@+id/option5.4Button"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:textColor="#FFFFFF"
+        android:backgroundTint="#A3C09A"
+        android:text="Granada"
+        app:layout_constraintTop_toBottomOf="@id/option5.3Button"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="8dp"
+        android:onClick="responderPregunta"
+        android:textSize="17sp"/>
+
+    <Button
+        android:id="@+id/button14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="620dp"
+        android:backgroundTint="#808080"
+        android:textColor="#FFFFFF"
+        android:onClick="Pregunta5_Menu"
+        android:text="Salir Quiz"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:textSize="15sp" />
+
+    <Button
+        android:id="@+id/button15"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="620dp"
+        android:layout_marginEnd="50dp"
+        android:backgroundTint="#D9C8A3"
+        android:textColor="#FFFFFF"
+        android:onClick="Pregunta5_Puntos"
+        android:text="Siguiente"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:textSize="15sp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

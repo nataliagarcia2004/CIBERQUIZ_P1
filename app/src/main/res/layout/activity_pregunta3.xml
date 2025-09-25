@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/pregunta3"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Pregunta3">
+
+
+    <ImageView
+        android:id="@+id/background_image"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/fondo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="PREGUNTA 3"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="200dp" />
+
+    <Button
+        android:id="@+id/question3Button"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#c2b19c"
+        android:text="¿Cuál de estos ingredientes no es necesario para hacer pan?"
+        app:layout_constraintTop_toBottomOf="@id/textView4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="32dp"
+        android:textSize="17sp"/>
+
+
+    <ImageButton
+        android:id="@+id/option1Image"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:scaleType="centerCrop"
+        android:contentDescription="Imagen de Harina"
+        android:src="@drawable/harina"
+        android:background="@android:color/transparent"
+        app:layout_constraintTop_toBottomOf="@id/textView4"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="110dp"
+        android:layout_marginStart="80dp"
+        android:onClick="onOptionSelected" />
+
+    <ImageButton
+        android:id="@+id/option2Image"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:scaleType="centerCrop"
+        android:contentDescription="Imagen de Levadura"
+        android:src="@drawable/levadura"
+        android:background="@android:color/transparent"
+        app:layout_constraintTop_toBottomOf="@id/textView4"
+        app:layout_constraintStart_toEndOf="@+id/option1Image"
+        android:layout_marginTop="110dp"
+        android:layout_marginStart="15dp"
+        android:onClick="onOptionSelected" />
+
+    <ImageButton
+        android:id="@+id/option3Image"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:scaleType="centerCrop"
+        android:contentDescription="Imagen de Miel"
+        android:src="@drawable/miel"
+        android:background="@android:color/transparent"
+        app:layout_constraintTop_toBottomOf="@+id/option1Image"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="15dp"
+        android:layout_marginStart="80dp"
+        android:onClick="onOptionSelected"
+        />
+
+    <ImageButton
+        android:id="@+id/option4Image"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:scaleType="centerCrop"
+        android:contentDescription="Imagen de Agua"
+        android:src="@drawable/agua"
+        android:background="@android:color/transparent"
+        app:layout_constraintTop_toBottomOf="@+id/option2Image"
+        app:layout_constraintStart_toEndOf="@+id/option3Image"
+        android:layout_marginTop="15dp"
+        android:layout_marginStart="15dp"
+        android:onClick="onOptionSelected" />
+
+
+    <Button
+        android:id="@+id/button8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="620dp"
+        android:backgroundTint="#808080"
+        android:textColor="#FFFFFF"
+        android:onClick="Pregunta3_Menu"
+        android:text="Salir Quiz"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:textSize="15sp" />
+
+    <Button
+        android:id="@+id/button9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="620dp"
+        android:layout_marginEnd="50dp"
+        android:backgroundTint="#D9C8A3"
+        android:textColor="#FFFFFF"
+        android:onClick="Pregunta3_Pregunta4"
+        android:text="Siguiente"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:textSize="15sp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
