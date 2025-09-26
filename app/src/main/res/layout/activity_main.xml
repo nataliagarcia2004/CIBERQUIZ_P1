@@ -55,7 +55,7 @@
         android:backgroundTint="@android:color/black"
         android:hint="Contraseña"
         android:inputType="textPassword"
-        android:textColor="@android:color/black"
+        android:textColor="@color/design_default_color_background"
         android:textColorHint="@color/design_default_color_background"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
