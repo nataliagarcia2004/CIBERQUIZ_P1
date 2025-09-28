@@ -29,7 +29,7 @@
         android:fontFamily="@font/nueva_fuente"
         android:text="MENÚ"
         android:textColor="#CDE9EB"
-        android:textSize="32sp"
+        android:textSize="48sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
