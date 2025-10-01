@@ -2,11 +2,9 @@ package com.example.practica_1;
 
 import android.content.Intent;
 import android.graphics.Color;
-import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -33,57 +31,24 @@ public class MainActivity extends AppCompatActivity {
     // Método para mostrar Snackbar con advertencia (naranja/amarillo)
     private void mostrarSnackbarAdvertencia(View view, String mensaje) {
         Snackbar snackbar = Snackbar.make(view, mensaje, Snackbar.LENGTH_LONG);
-        View snackbarView = snackbar.getView();
-
-        // Fondo naranja/amarillo para advertencias
-        snackbarView.setBackgroundColor(Color.parseColor("#FF9800"));
-        snackbarView.setElevation(16f);
-
-        // Personalizar el texto
-        TextView textView = snackbarView.findViewById(com.google.android.material.R.id.snackbar_text);
-        textView.setTextColor(Color.WHITE);
-        textView.setTextSize(16);
-        textView.setTypeface(null, Typeface.BOLD);
-        textView.setMaxLines(3);
-
+        snackbar.setBackgroundTint(Color.parseColor("#FF9800"));
+        snackbar.setTextColor(Color.WHITE);
         snackbar.show();
     }
 
     // Método para mostrar Snackbar de error (rojo)
     private void mostrarSnackbarError(View view, String mensaje) {
         Snackbar snackbar = Snackbar.make(view, mensaje, Snackbar.LENGTH_LONG);
-        View snackbarView = snackbar.getView();
-
-        // Fondo rojo para errores
-        snackbarView.setBackgroundColor(Color.parseColor("#F44336"));
-        snackbarView.setElevation(16f);
-
-        // Personalizar el texto
-        TextView textView = snackbarView.findViewById(com.google.android.material.R.id.snackbar_text);
-        textView.setTextColor(Color.WHITE);
-        textView.setTextSize(16);
-        textView.setTypeface(null, Typeface.BOLD);
-        textView.setMaxLines(3);
-
+        snackbar.setBackgroundTint(Color.parseColor("#F44336"));
+        snackbar.setTextColor(Color.WHITE);
         snackbar.show();
     }
 
     // Método para mostrar Snackbar de éxito (verde)
     private void mostrarSnackbarExito(View view, String mensaje) {
         Snackbar snackbar = Snackbar.make(view, mensaje, Snackbar.LENGTH_LONG);
-        View snackbarView = snackbar.getView();
-
-        // Fondo verde para éxito
-        snackbarView.setBackgroundColor(Color.parseColor("#4CAF50"));
-        snackbarView.setElevation(16f);
-
-        // Personalizar el texto
-        TextView textView = snackbarView.findViewById(com.google.android.material.R.id.snackbar_text);
-        textView.setTextColor(Color.WHITE);
-        textView.setTextSize(16);
-        textView.setTypeface(null, Typeface.BOLD);
-        textView.setMaxLines(3);
-
+        snackbar.setBackgroundTint(Color.parseColor("#4CAF50"));
+        snackbar.setTextColor(Color.WHITE);
         snackbar.show();
     }
 
