@@ -20,7 +20,7 @@ public class Puntos extends AppCompatActivity {
         puntuacion = intent.getIntExtra("puntuacion", puntuacion);//tocado
 
         TextView puntuacionTextView = findViewById(R.id.puntuacionTextView);
-        puntuacionTextView.setText("Tu puntuación final es: " + puntuacion);
+        puntuacionTextView.setText("PUNTUACIÓN FINAL: " + puntuacion);
     }
 
     public void Puntos_Pregunta1(View view) {
