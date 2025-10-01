@@ -1,6 +1,7 @@
 package com.example.practica_1;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -10,6 +11,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class Pregunta2 extends AppCompatActivity {
     private int puntuacion = 0;
+    private MediaPlayer sonidoAcierto;
+    private MediaPlayer sonidoError;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,6 +22,10 @@ public class Pregunta2 extends AppCompatActivity {
         // Recibe la puntuación desde la pregunta 1
         Intent intent = getIntent();
         puntuacion = intent.getIntExtra("puntuacion", 0);
+
+        // Inicializar los MediaPlayer con los sonidos
+        sonidoAcierto = MediaPlayer.create(this, R.raw.aplausos);
+        sonidoError = MediaPlayer.create(this, R.raw.abucheo);
     }
 
     public void responderPregunta(View view) {
@@ -29,7 +36,13 @@ public class Pregunta2 extends AppCompatActivity {
 
         if (respuesta.equals(respuestaCorrecta)) {
             puntuacion += 3;
-            Toast.makeText(this, "¡ACIERTO! Has ganado 3 puntos.", Toast.LENGTH_SHORT).show();
+
+            // Reproducir sonido de acierto
+            if (sonidoAcierto != null) {
+                sonidoAcierto.start();
+            }
+
+            Toast.makeText(this, "¡Correcto! Has ganado 3 puntos.", Toast.LENGTH_SHORT).show();
 
             Intent i = new Intent(this, Pregunta3.class);
             i.putExtra("puntuacion", puntuacion);
@@ -37,6 +50,12 @@ public class Pregunta2 extends AppCompatActivity {
 
         } else {
             puntuacion -= 2;
+
+            // Reproducir sonido de error
+            if (sonidoError != null) {
+                sonidoError.start();
+            }
+
             Toast.makeText(this, "Error: " + respuesta + " es incorrecto. Has perdido 2 puntos.", Toast.LENGTH_SHORT).show();
         }
     }
@@ -50,5 +69,19 @@ public class Pregunta2 extends AppCompatActivity {
     public void Pregunta2_Menu(View view) {
         Intent i = new Intent(this, Menu.class);
         startActivity(i);
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        // Liberar recursos de los MediaPlayer
+        if (sonidoAcierto != null) {
+            sonidoAcierto.release();
+            sonidoAcierto = null;
+        }
+        if (sonidoError != null) {
+            sonidoError.release();
+            sonidoError = null;
+        }
     }
 }
