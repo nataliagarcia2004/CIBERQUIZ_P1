@@ -33,7 +33,7 @@ public class Pregunta3 extends AppCompatActivity {
         } else if (view.getId() == R.id.option3Image) {
             // Opción 3 (Correcta)
             puntuacion += 3;
-            Toast.makeText(this, "¡Correcto! Has ganado 3 puntos.", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "¡ACIERTO! Has ganado 3 puntos.", Toast.LENGTH_SHORT).show();
             Pregunta3_Pregunta4(view);
         } else if (view.getId() == R.id.option4Image) {
             // Opción 4

@@ -30,7 +30,7 @@ public class Pregunta5 extends AppCompatActivity {
 
         if (respuesta.equals(respuestaCorrecta)) {
             puntuacion += 3;
-            Toast.makeText(this, "¡Correcto! Has ganado 3 puntos.", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "¡ACIERTO! Has ganado 3 puntos.", Toast.LENGTH_SHORT).show();
 
             Intent i = new Intent(this, Puntos.class);
             i.putExtra("puntuacion", puntuacion);
