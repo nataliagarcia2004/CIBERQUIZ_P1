@@ -7,6 +7,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Puntos">
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/confettiAnimation"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:scaleType="centerCrop"
+        app:lottie_rawRes="@raw/confetti"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        android:elevation="1dp"/>
 
 
     <ImageView
@@ -28,6 +38,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="130dp"
         android:fontFamily="@font/nueva_fuente"
+        android:elevation="5dp"
         android:text="PUNTOS"
         android:textColor="#DED7D5"
         android:textSize="32sp"
@@ -42,6 +53,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="252dp"
         android:text="Tu puntuación  \nfinal es: "
+        android:elevation="5dp"
         android:textColor="#009688"
         android:textColorHighlight="#D7C6C6"
         android:textSize="25sp"
@@ -61,6 +73,7 @@
         android:text="Reiniciar Quiz"
         android:textColor="#FFFFFF"
         android:textSize="15sp"
+        android:elevation="5dp"
         app:layout_constraintEnd_toStartOf="@+id/button13"
         app:layout_constraintHorizontal_bias="0.586"
         app:layout_constraintStart_toStartOf="parent"
@@ -75,6 +88,7 @@
         android:backgroundTint="#2196F3"
         android:onClick="Puntos_Menu"
         android:text="Menú"
+        android:elevation="5dp"
         android:textColor="#FFFFFF"
         android:textSize="15sp"
         app:layout_constraintEnd_toEndOf="parent"

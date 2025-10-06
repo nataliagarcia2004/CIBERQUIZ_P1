@@ -45,6 +45,8 @@ public class Pregunta1 extends AppCompatActivity {
             Intent i = new Intent(this, Pregunta2.class);
             i.putExtra("puntuacion", puntuacion);
             startActivity(i);
+            overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+
 
         } else {
             puntuacion -= 2;
@@ -62,11 +64,15 @@ public class Pregunta1 extends AppCompatActivity {
         Intent i = new Intent(this, Pregunta2.class);
         i.putExtra("puntuacion", puntuacion);
         startActivity(i);
+        overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+
     }
 
     public void Pregunta1_Menu(View view) {
         Intent i = new Intent(this, Menu.class);
         startActivity(i);
+        overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+
     }
 
     @Override

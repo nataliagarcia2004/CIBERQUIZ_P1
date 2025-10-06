@@ -6,6 +6,8 @@ import android.widget.TextView;
 import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
+import com.airbnb.lottie.LottieAnimationView;
+
 
 public class Puntos extends AppCompatActivity {
 

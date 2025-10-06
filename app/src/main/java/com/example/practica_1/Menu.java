@@ -23,15 +23,18 @@ public class Menu extends AppCompatActivity {
         Intent i = new Intent (this, Pregunta1.class);
         i.putExtra("puntuacion", 0);
         startActivity(i);
+        overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
     }
     public void SalirApp(View view) {
         Intent i = new Intent (this, MainActivity.class);
         i.putExtra("puntuacion", puntuacion);
         startActivity(i);
+        overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
     }
     public void Puntos(View view) {
         Intent i = new Intent (this, Puntos.class);
         i.putExtra("puntuacion", puntuacion);
         startActivity(i);
+        overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
     }
 }

@@ -87,6 +87,7 @@ public class MainActivity extends AppCompatActivity {
             Intent i = new Intent(this, Menu.class);
             i.putExtra("puntuacion", puntuacion);
             startActivity(i);
+            overridePendingTransition(R.anim.fade_in_zoom, R.anim.fade_out_zoom);
         }, 1500); // Espera 1.5 segundos antes de cambiar de actividad
     }
 }
