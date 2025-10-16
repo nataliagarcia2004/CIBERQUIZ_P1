@@ -7,6 +7,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Puntos">
+
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/confettiAnimation"
         android:layout_width="match_parent"
@@ -18,11 +19,11 @@
         app:lottie_loop="true"
         android:elevation="1dp"/>
 
-
     <ImageView
         android:id="@+id/background_image"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:contentDescription="@string/descripcion_fondo_puntos"
         android:scaleType="centerCrop"
         android:src="@drawable/fondo_puntos"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -39,7 +40,7 @@
         android:layout_marginTop="130dp"
         android:fontFamily="@font/nueva_fuente"
         android:elevation="5dp"
-        android:text="PUNTOS"
+        android:text="@string/puntos_titulo"
         android:textColor="#DED7D5"
         android:textSize="32sp"
         android:textStyle="bold"
@@ -52,7 +53,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="252dp"
-        android:text="Tu puntuación  \nfinal es: "
+        android:text="@string/puntos_texto_final"
         android:elevation="5dp"
         android:textColor="#009688"
         android:textColorHighlight="#D7C6C6"
@@ -70,7 +71,7 @@
         android:layout_marginTop="124dp"
         android:backgroundTint="#808080"
         android:onClick="Puntos_Pregunta1"
-        android:text="Reiniciar Quiz"
+        android:text="@string/boton_reiniciar_quiz"
         android:textColor="#FFFFFF"
         android:textSize="15sp"
         android:elevation="5dp"
@@ -87,7 +88,7 @@
         android:layout_marginEnd="72dp"
         android:backgroundTint="#2196F3"
         android:onClick="Puntos_Menu"
-        android:text="Menú"
+        android:text="@string/boton_menu"
         android:elevation="5dp"
         android:textColor="#FFFFFF"
         android:textSize="15sp"

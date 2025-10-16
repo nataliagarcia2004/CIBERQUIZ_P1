@@ -12,6 +12,7 @@
         android:id="@+id/background_image"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:contentDescription="@string/descripcion_fondo_preguntas"
         android:scaleType="centerCrop"
         android:src="@drawable/fondo_preguntas"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -25,7 +26,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="200dp"
         android:fontFamily="@font/tokyo"
-        android:text="PREGUNTA 4"
+        android:text="@string/pregunta4_titulo"
         android:textColor="#EFEBEB"
         android:textSize="34sp"
         android:textStyle="bold"
@@ -37,80 +38,38 @@
         android:id="@+id/questionButton4"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="76dp"
+        android:layout_marginTop="32dp"
         android:backgroundTint="#03A9F4"
-        android:text="¿Qué protocolo se utiliza para navegar de forma segura en la web?"
+        android:text="@string/pregunta4_enunciado"
         android:textSize="17sp"
         app:cornerRadius="0dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.531"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/textView5" />
 
-    <Button
-        android:id="@+id/option4.1Button"
-        android:layout_width="0dp"
+    <TextView
+        android:id="@+id/labelSpinner"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="20dp"
-        android:layout_marginTop="56dp"
-        android:backgroundTint="#3F51B5"
-        android:onClick="responderPregunta"
-        android:text="HTTP"
-        android:textColor="#FFFFFF"
-        android:textSize="17sp"
-        app:cornerRadius="0dp"
-        app:layout_constraintEnd_toStartOf="@+id/option4.2Button"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/questionButton4"
-        app:layout_constraintWidth_percent="0.4" />
-
-    <Button
-        android:id="@+id/option4.2Button"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_margin="20dp"
-        android:backgroundTint="#3F51B5"
-        android:onClick="responderPregunta"
-        android:text="HTTPS"
-        android:textColor="#FFFFFF"
-        android:textSize="17sp"
-        app:cornerRadius="0dp"
+        android:layout_marginTop="32dp"
+        android:text="@string/pregunta4_label_spinner"
+        android:textColor="@color/white"
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/option4.1Button"
-        app:layout_constraintTop_toBottomOf="@+id/questionButton4"
-        app:layout_constraintWidth_percent="0.4" />
-
-    <Button
-        android:id="@+id/option4.3Button"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_margin="8dp"
-        android:backgroundTint="#3F51B5"
-        android:onClick="responderPregunta"
-        android:text="FTP"
-        android:textColor="#FFFFFF"
-        android:textSize="17sp"
-        app:cornerRadius="0dp"
-        app:layout_constraintEnd_toStartOf="@+id/option4.4Button"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/option4.1Button"
-        app:layout_constraintWidth_percent="0.4" />
+        app:layout_constraintTop_toBottomOf="@id/questionButton4" />
 
-    <Button
-        android:id="@+id/option4.4Button"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_margin="8dp"
-        android:backgroundTint="#3F51B5"
-        android:onClick="responderPregunta"
-        android:text="SMTP"
-        android:textColor="#FFFFFF"
-        android:textSize="17sp"
-        app:cornerRadius="0dp"
+    <Spinner
+        android:id="@+id/spinnerOpciones"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="16dp"
+        android:background="@android:drawable/btn_dropdown"
+        android:padding="10dp"
+        android:popupBackground="#3F51B5"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/option4.3Button"
-        app:layout_constraintTop_toBottomOf="@id/option4.2Button"
-        app:layout_constraintWidth_percent="0.4" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/labelSpinner" />
 
     <Button
         android:id="@+id/button10"
@@ -120,7 +79,7 @@
         android:layout_marginTop="580dp"
         android:backgroundTint="#808080"
         android:onClick="Pregunta4_Menu"
-        android:text="Salir Quiz"
+        android:text="@string/boton_salir_quiz"
         android:textColor="#FFFFFF"
         android:textSize="15sp"
         app:layout_constraintStart_toStartOf="parent"
@@ -134,10 +93,9 @@
         android:layout_marginEnd="52dp"
         android:backgroundTint="#009688"
         android:onClick="Pregunta4_Pregunta5"
-        android:text="Siguiente"
+        android:text="@string/boton_siguiente"
         android:textColor="#FFFFFF"
         android:textSize="15sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
-

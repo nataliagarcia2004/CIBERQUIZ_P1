@@ -41,6 +41,16 @@
     <string name="pregunta3_imagen_lowi">Mensaje de phishing de Lowi</string>
     <string name="pregunta3_imagen_dgt">Mensaje de phishing de la DGT</string>
     <string name="pregunta3_imagen_segsoc">Mensaje de phishing de la Seguridad Social</string>
+    <string name="pregunta4_titulo">PREGUNTA 4</string>
+    <string name="pregunta4_enunciado">¿Qué protocolo se utiliza para navegar de forma segura en la web?</string>
+    <string name="pregunta4_label_spinner">Selecciona tu respuesta:</string>
+    <string name="pregunta5_titulo">PREGUNTA 5</string>
+    <string name="pregunta5_enunciado">¿Qué acción es recomendable para proteger tu cuenta online?</string>
+    <string name="puntos_titulo">PUNTOS</string>
+    <string name="puntos_texto_final">Tu puntuación  \nfinal es: </string>
+    <string name="boton_reiniciar_quiz">Reiniciar Quiz</string>
+    <string name="boton_menu">Menú</string>
+    <string name="descripcion_fondo_puntos">Fondo de pantalla de puntuación</string>
 
     <string name="lorem_ipsum">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam in scelerisque sem. Mauris
