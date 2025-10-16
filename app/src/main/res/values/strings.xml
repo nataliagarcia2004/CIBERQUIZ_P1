@@ -10,6 +10,25 @@
     <string name="error_email_formato_invalido">❌ El correo electrónico no tiene un formato válido</string>
     <string name="exito_sesion_iniciada">✅ Sesión iniciada correctamente</string>
     <string name="puntuacion_final">PUNTUACIÓN FINAL: %d</string>
+    <string name="hint_correo_electronico">Correo electrónico</string>
+    <string name="hint_contrasena">Contraseña</string>
+    <string name="boton_iniciar_sesion">INICIAR SESIÓN</string>
+    <string name="descripcion_fondo">Fondo de inicio de sesión</string>
+    <string name="descripcion_logo">Logo de la aplicación</string>
+    <string name="menu_titulo">MENÚ</string>
+    <string name="boton_cerrar_sesion">Cerrar la sesión</string>
+    <string name="boton_puntos">Puntos</string>
+    <string name="boton_empezar_quiz">Empezar el Quiz</string>
+    <string name="descripcion_fondo_menu">Fondo del menú principal</string>
+    <string name="pregunta1_titulo">PREGUNTA 1</string>
+    <string name="pregunta1_enunciado">¿Cuál de las siguientes contraseñas sería más segura?</string>
+    <string name="pregunta1_opcion1">123456</string>
+    <string name="pregunta1_opcion2">M1c0ntr4s3ñ4!</string>
+    <string name="pregunta1_opcion3">qwerty</string>
+    <string name="pregunta1_opcion4">password</string>
+    <string name="boton_salir_quiz">Salir Quiz</string>
+    <string name="boton_siguiente">Siguiente</string>
+    <string name="descripcion_fondo_preguntas">Fondo de preguntas</string>
 
     <string name="lorem_ipsum">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam in scelerisque sem. Mauris

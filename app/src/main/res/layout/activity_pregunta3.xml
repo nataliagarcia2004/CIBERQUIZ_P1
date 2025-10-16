@@ -1,18 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/pregunta3"
+    android:id="@+id/pregunta1"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Pregunta3">
-
+    tools:context=".Pregunta1">
 
     <ImageView
         android:id="@+id/background_image"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:contentDescription="@string/descripcion_fondo_preguntas"
         android:scaleType="centerCrop"
         android:src="@drawable/fondo_preguntas"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -20,121 +19,124 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="1.0" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="72dp"
+        android:layout_marginTop="200dp"
         android:fontFamily="@font/tokyo"
-        android:text="PREGUNTA 3"
-        android:textColor="#EDDFDF"
+        android:text="@string/pregunta1_titulo"
+        android:textColor="@color/design_default_color_background"
+        android:textColorHint="@color/design_default_color_background"
         android:textSize="34sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/question3Button"
+        android:id="@+id/questionButton"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:backgroundTint="#03A9F4"
-        android:text="¿Cuál de estos  sms es un ejemplo de phishing?"
+        android:text="@string/pregunta1_enunciado"
+        android:textColorHint="#0E3350"
         android:textSize="17sp"
         app:cornerRadius="0dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textView4" />
-
-
-    <ImageButton
-        android:id="@+id/option1Image"
-        android:layout_width="280dp"
-        android:layout_height="100dp"
-        android:layout_marginStart="76dp"
-        android:layout_marginTop="116dp"
-        android:background="@android:color/transparent"
-        android:contentDescription="imagenphissingGYM"
-        android:onClick="onOptionSelected"
-        android:scaleType="centerCrop"
-        android:src="@drawable/fotophissing1"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textView4" />
-
-    <ImageButton
-        android:id="@+id/option2Image"
-        android:layout_width="280dp"
-        android:layout_height="100dp"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="12dp"
-        android:background="@android:color/transparent"
-        android:contentDescription="fotophissingLOWI"
-        android:onClick="onOptionSelected"
-        android:scaleType="centerCrop"
-        android:src="@drawable/fotophissing2"
-        app:layout_constraintStart_toStartOf="@+id/option1Image"
-        app:layout_constraintTop_toBottomOf="@+id/option1Image" />
-
-    <ImageButton
-        android:id="@+id/option3Image"
-        android:layout_width="280dp"
-        android:layout_height="100dp"
-        android:layout_marginStart="80dp"
-        android:layout_marginTop="12dp"
-        android:background="@android:color/transparent"
-        android:contentDescription="fotophissingDGT"
-        android:onClick="onOptionSelected"
-        android:scaleType="centerCrop"
-        android:src="@drawable/fotophissing3"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/option2Image" />
-
-    <ImageButton
-        android:id="@+id/option4Image"
-        android:layout_width="280dp"
-        android:layout_height="100dp"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="16dp"
-        android:background="@android:color/transparent"
-        android:contentDescription="fotophissingSEGSOC"
-        android:onClick="onOptionSelected"
-        android:scaleType="centerCrop"
-        android:src="@drawable/fotophissing4"
-        app:layout_constraintStart_toStartOf="@+id/option3Image"
-        app:layout_constraintTop_toBottomOf="@+id/option3Image" />
+        app:layout_constraintTop_toBottomOf="@id/textView2" />
 
     <Button
-        android:id="@+id/button8"
+        android:id="@+id/option1Button"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:backgroundTint="#3F51B5"
+        android:onClick="responderPregunta"
+        android:text="@string/pregunta1_opcion1"
+        android:textColor="#FFFFFF"
+        android:textSize="17sp"
+        app:cornerRadius="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/questionButton" />
+
+    <Button
+        android:id="@+id/option2Button"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:backgroundTint="#3F51B5"
+        android:onClick="responderPregunta"
+        android:text="@string/pregunta1_opcion2"
+        android:textColor="#FFFFFF"
+        android:textSize="17sp"
+        app:cornerRadius="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/option1Button" />
+
+    <Button
+        android:id="@+id/option3Button"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:backgroundTint="#3F51B5"
+        android:onClick="responderPregunta"
+        android:text="@string/pregunta1_opcion3"
+        android:textColor="#FFFFFF"
+        android:textSize="17sp"
+        app:cornerRadius="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/option2Button" />
+
+    <Button
+        android:id="@+id/option4Button"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:backgroundTint="#3F51B5"
+        android:onClick="responderPregunta"
+        android:text="@string/pregunta1_opcion4"
+        android:textColor="#FFFFFF"
+        android:textSize="17sp"
+        app:cornerRadius="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/option3Button" />
+
+    <Button
+        android:id="@+id/button2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="680dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="620dp"
         android:backgroundTint="#808080"
-        android:onClick="Pregunta3_Menu"
-        android:text="Salir Quiz"
+        android:onClick="Pregunta1_Menu"
+        android:text="@string/boton_salir_quiz"
         android:textColor="#FFFFFF"
         android:textSize="15sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button9"
+        android:id="@+id/button5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="680dp"
-        android:layout_marginEnd="4dp"
+        android:layout_marginTop="620dp"
+        android:layout_marginEnd="50dp"
         android:backgroundTint="#009688"
-        android:onClick="Pregunta3_Pregunta4"
-        android:text="Siguiente"
+        android:onClick="Pregunta1_Pregunta2"
+        android:text="@string/boton_siguiente"
         android:textColor="#FFFFFF"
         android:textSize="15sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
-
 
