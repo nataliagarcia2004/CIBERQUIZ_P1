@@ -6,7 +6,6 @@ import android.widget.TextView;
 import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
-import com.airbnb.lottie.LottieAnimationView;
 
 
 public class Puntos extends AppCompatActivity {
@@ -22,7 +21,7 @@ public class Puntos extends AppCompatActivity {
         puntuacion = intent.getIntExtra("puntuacion", puntuacion);//tocado
 
         TextView puntuacionTextView = findViewById(R.id.puntuacionTextView);
-        puntuacionTextView.setText("PUNTUACIÓN FINAL: " + puntuacion);
+        puntuacionTextView.setText(getString(R.string.puntuacion_final, puntuacion));
     }
 
     public void Puntos_Pregunta1(View view) {
