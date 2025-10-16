@@ -64,23 +64,23 @@ public class MainActivity extends AppCompatActivity {
         String password = editTextPassword.getText().toString().trim();
 
         if (email.isEmpty()) {
-            mostrarSnackbarAdvertencia(view, "⚠️ Por favor, ingresa tu correo electrónico");
+            mostrarSnackbarAdvertencia(view, getString(R.string.error_email_vacio));
             return;
         }
 
         if (password.isEmpty()) {
-            mostrarSnackbarAdvertencia(view, "⚠️ Por favor, ingresa tu contraseña");
+            mostrarSnackbarAdvertencia(view, getString(R.string.error_password_vacio));
             return;
         }
 
         // Validar formato del email
         if (!esEmailValido(email)) {
-            mostrarSnackbarError(view, "❌ El correo electrónico no tiene un formato válido");
+            mostrarSnackbarError(view, getString(R.string.error_email_formato_invalido));
             return;
         }
 
         // Si todo está correcto, mostrar mensaje de éxito
-        mostrarSnackbarExito(view, "✅ Sesión iniciada correctamente");
+        mostrarSnackbarExito(view, getString(R.string.exito_sesion_iniciada));
 
         // Ir al menú después de un pequeño delay para que se vea el Snackbar
         view.postDelayed(() -> {
@@ -88,6 +88,6 @@ public class MainActivity extends AppCompatActivity {
             i.putExtra("puntuacion", puntuacion);
             startActivity(i);
             overridePendingTransition(R.anim.fade_in_zoom, R.anim.fade_out_zoom);
-        }, 1500); // Espera 1.5 segundos antes de cambiar de actividad
+        }, 1500);
     }
 }

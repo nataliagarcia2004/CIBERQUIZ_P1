@@ -5,6 +5,10 @@
     <string name="second_fragment_label">Second Fragment</string>
     <string name="next">Next</string>
     <string name="previous">Previous</string>
+    <string name="error_email_vacio">⚠️ Por favor, ingresa tu correo electrónico</string>
+    <string name="error_password_vacio">⚠️ Por favor, ingresa tu contraseña</string>
+    <string name="error_email_formato_invalido">❌ El correo electrónico no tiene un formato válido</string>
+    <string name="exito_sesion_iniciada">✅ Sesión iniciada correctamente</string>
 
     <string name="lorem_ipsum">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam in scelerisque sem. Mauris
