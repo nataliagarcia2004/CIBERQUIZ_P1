@@ -1,93 +1,127 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/menu"
+    android:id="@+id/pregunta2"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Menu">
+    tools:context=".Pregunta2">
 
     <ImageView
         android:id="@+id/background_image"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:contentDescription="@string/descripcion_fondo_menu"
+        android:contentDescription="@string/descripcion_fondo_preguntas"
         android:scaleType="centerCrop"
-        android:src="@drawable/fondo_menu2"
+        android:src="@drawable/fondo_preguntas"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:fontFamily="@font/nueva_fuente"
-        android:text="@string/menu_titulo"
-        android:textColor="#CDE9EB"
-        android:textSize="48sp"
+        android:layout_marginTop="200dp"
+        android:fontFamily="@font/tokyo"
+        android:text="@string/pregunta2_titulo"
+        android:textColor="@color/white"
+        android:textSize="34sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.137" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button4"
-        android:layout_width="0dp"
-        android:layout_height="60dp"
-        android:layout_marginBottom="00dp"
+        android:id="@+id/question2Button"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
         android:backgroundTint="#03A9F4"
-        android:onClick="SalirApp"
-        android:text="@string/boton_cerrar_sesion"
+        android:text="@string/pregunta2_enunciado"
+        android:textSize="17sp"
+        app:cornerRadius="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textView3" />
+
+    <RadioGroup
+        android:id="@+id/radioGroupOpciones"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/question2Button">
+
+        <RadioButton
+            android:id="@+id/option2_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/pregunta2_opcion1"
+            android:textColor="@color/white"
+            android:textSize="17sp"
+            android:buttonTint="@color/white" />
+
+        <RadioButton
+            android:id="@+id/option2_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/pregunta2_opcion2"
+            android:textColor="@color/white"
+            android:textSize="17sp"
+            android:buttonTint="@color/white" />
+
+        <RadioButton
+            android:id="@+id/option2_3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/pregunta2_opcion3"
+            android:textColor="@color/white"
+            android:textSize="17sp"
+            android:buttonTint="@color/white" />
+
+        <RadioButton
+            android:id="@+id/option2_4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/pregunta2_opcion4"
+            android:textColor="@color/white"
+            android:textSize="17sp"
+            android:buttonTint="@color/white" />
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/button6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="620dp"
+        android:backgroundTint="#808080"
         android:textColor="#FFFFFF"
-        android:textSize="15sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/button16"
-        app:layout_constraintHorizontal_chainStyle="spread"
+        android:onClick="Pregunta2_Menu"
+        android:text="@string/boton_salir_quiz"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.412"
-        app:layout_constraintWidth_percent="0.3" />
+        android:textSize="15sp" />
 
     <Button
-        android:id="@+id/button16"
-        android:layout_width="0dp"
-        android:layout_height="60dp"
-        android:layout_marginBottom="00dp"
-        android:backgroundTint="#3F51B5"
-        android:onClick="Puntos"
-        android:text="@string/boton_puntos"
+        android:id="@+id/button7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="620dp"
+        android:layout_marginEnd="50dp"
+        android:backgroundTint="#009688"
+        android:onClick="Pregunta2_Pregunta3"
+        android:text="@string/boton_siguiente"
         android:textColor="#FFFFFF"
         android:textSize="15sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/button3"
-        app:layout_constraintStart_toEndOf="@+id/button4"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.916"
-        app:layout_constraintWidth_percent="0.3" />
-
-    <Button
-        android:id="@+id/button3"
-        android:layout_width="0dp"
-        android:layout_height="60dp"
-        android:layout_marginBottom="00dp"
-        android:backgroundTint="#2196F3"
-        android:onClick="Menu_Pregunta1"
-        android:text="@string/boton_empezar_quiz"
-        android:textColor="#FFFFFF"
-        android:textSize="15sp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/button16"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.412"
-        app:layout_constraintWidth_percent="0.3" />
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -7,11 +7,11 @@
     android:layout_height="match_parent"
     tools:context=".Menu">
 
-
     <ImageView
         android:id="@+id/background_image"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:contentDescription="@string/descripcion_fondo_menu"
         android:scaleType="centerCrop"
         android:src="@drawable/fondo_menu2"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -27,7 +27,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:fontFamily="@font/nueva_fuente"
-        android:text="MENÚ"
+        android:text="@string/menu_titulo"
         android:textColor="#CDE9EB"
         android:textSize="48sp"
         android:textStyle="bold"
@@ -45,7 +45,7 @@
         android:layout_marginBottom="00dp"
         android:backgroundTint="#03A9F4"
         android:onClick="SalirApp"
-        android:text="Cerrar la sesión"
+        android:text="@string/boton_cerrar_sesion"
         android:textColor="#FFFFFF"
         android:textSize="15sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -63,7 +63,7 @@
         android:layout_marginBottom="00dp"
         android:backgroundTint="#3F51B5"
         android:onClick="Puntos"
-        android:text="Puntos"
+        android:text="@string/boton_puntos"
         android:textColor="#FFFFFF"
         android:textSize="15sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -80,7 +80,7 @@
         android:layout_marginBottom="00dp"
         android:backgroundTint="#2196F3"
         android:onClick="Menu_Pregunta1"
-        android:text="Empezar el Quiz"
+        android:text="@string/boton_empezar_quiz"
         android:textColor="#FFFFFF"
         android:textSize="15sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -91,5 +91,3 @@
         app:layout_constraintWidth_percent="0.3" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
-
-

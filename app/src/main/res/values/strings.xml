@@ -29,6 +29,18 @@
     <string name="boton_salir_quiz">Salir Quiz</string>
     <string name="boton_siguiente">Siguiente</string>
     <string name="descripcion_fondo_preguntas">Fondo de preguntas</string>
+    <string name="pregunta2_titulo">PREGUNTA 2</string>
+    <string name="pregunta2_enunciado">¿Qué significa el término phishing?</string>
+    <string name="pregunta2_opcion1">Red rápida</string>
+    <string name="pregunta2_opcion2">Virus</string>
+    <string name="pregunta2_opcion3">Cifrado</string>
+    <string name="pregunta2_opcion4">Correo falso</string>
+    <string name="pregunta3_titulo">PREGUNTA 3</string>
+    <string name="pregunta3_enunciado">¿Cuál de estos  sms es un ejemplo de phishing?</string>
+    <string name="pregunta3_imagen_gym">Mensaje de phishing del gimnasio</string>
+    <string name="pregunta3_imagen_lowi">Mensaje de phishing de Lowi</string>
+    <string name="pregunta3_imagen_dgt">Mensaje de phishing de la DGT</string>
+    <string name="pregunta3_imagen_segsoc">Mensaje de phishing de la Seguridad Social</string>
 
     <string name="lorem_ipsum">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam in scelerisque sem. Mauris
