@@ -51,6 +51,19 @@
     <string name="boton_reiniciar_quiz">Reiniciar Quiz</string>
     <string name="boton_menu">Menú</string>
     <string name="descripcion_fondo_puntos">Fondo de pantalla de puntuación</string>
+    <string-array name="protocolos_opciones">
+        <item>Selecciona una opción</item>
+        <item>HTTP</item>
+        <item>HTTPS</item>
+        <item>FTP</item>
+        <item>SMTP</item>
+    </string-array>
+    <string-array name="opciones_seguridad">
+        <item>Cambiar clave</item>
+        <item>Usar PIN</item>
+        <item>Verificación 2FA</item>
+        <item>Antivirus</item>
+    </string-array>
 
     <string name="lorem_ipsum">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam in scelerisque sem. Mauris
