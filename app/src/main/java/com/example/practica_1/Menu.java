@@ -37,4 +37,12 @@ public class Menu extends AppCompatActivity {
         startActivity(i);
         overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
     }
+    public void AbrirInstrucciones(View view) {
+        Intent i = new Intent(this, Instrucciones.class);
+        i.putExtra("puntuacion", puntuacion);
+        startActivity(i);
+        overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+    }
+
+
 }
