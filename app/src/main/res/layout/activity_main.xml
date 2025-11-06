@@ -21,64 +21,235 @@
         app:srcCompat="@drawable/fondo_iniciarsesion"
         tools:ignore="HardcodedText" />
 
-    <EditText
-        android:id="@+id/editTextEmail"
-        android:layout_width="204dp"
-        android:layout_height="56dp"
-        android:layout_marginStart="100dp"
-        android:layout_marginTop="292dp"
-        android:autofillHints="emailAddress"
-        android:backgroundTint="@android:color/black"
-        android:hint="Correo electrónico"
-        android:inputType="textEmailAddress"
-        android:shadowColor="#03A9F4"
-        android:textColor="@color/white"
-        android:textColorHint="@color/white"
-        android:textColorLink="@color/design_default_color_background"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="HardcodedText" />
-
-    <EditText
-        android:id="@+id/editTextPassword"
-        android:layout_width="206dp"
-        android:layout_height="58dp"
-        android:layout_marginStart="96dp"
-        android:layout_marginTop="372dp"
-        android:autofillHints="password"
-        android:backgroundTint="@android:color/black"
-        android:hint="Contraseña"
-        android:inputType="textPassword"
-        android:textColor="@color/design_default_color_background"
-        android:textColorHint="@color/design_default_color_background"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="HardcodedText" />
-
-    <Button
-        android:id="@+id/buttonLogin"
-        android:layout_width="120dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="132dp"
-        android:layout_marginTop="460dp"
-        android:backgroundTint="#03A9F4"
-        android:onClick="Menu"
-        android:text="INICIAR SESIÓN"
-        android:textColor="@android:color/white"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="HardcodedText" />
-
+    <!-- Logo -->
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="113dp"
-        android:layout_height="184dp"
-        android:layout_marginTop="108dp"
-        android:contentDescription="Logo de inicio de sesión"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_marginTop="60dp"
+        android:contentDescription="Logo de CiberQuizz"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/imageView3"
+        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/login"
         tools:ignore="HardcodedText" />
+
+    <!-- Contenedor con fondo semitransparente -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardContainer"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="24dp"
+        android:elevation="8dp"
+        app:cardBackgroundColor="#CC000000"
+        app:cardCornerRadius="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imageView2">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="24dp">
+
+            <!-- Pestañas de navegación -->
+            <LinearLayout
+                android:id="@+id/tabLayout"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:background="@android:color/transparent"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <Button
+                    android:id="@+id/btnTabLogin"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:backgroundTint="#03A9F4"
+                    android:text="INICIAR SESIÓN"
+                    android:textColor="@android:color/white"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    app:cornerRadius="8dp" />
+
+                <View
+                    android:layout_width="8dp"
+                    android:layout_height="match_parent" />
+
+                <Button
+                    android:id="@+id/btnTabRegister"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:backgroundTint="#607D8B"
+                    android:text="REGISTRARSE"
+                    android:textColor="@android:color/white"
+                    android:textSize="14sp"
+                    app:cornerRadius="8dp" />
+            </LinearLayout>
+
+            <!-- Contenedor para Login -->
+            <LinearLayout
+                android:id="@+id/loginContainer"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:orientation="vertical"
+                android:visibility="visible"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tabLayout">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:text="Bienvenido de nuevo"
+                    android:textColor="#FFFFFF"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    tools:ignore="HardcodedText" />
+
+                <EditText
+                    android:id="@+id/editTextLoginEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:layout_marginBottom="12dp"
+                    android:autofillHints="emailAddress"
+                    android:background="@android:color/white"
+                    android:hint="Correo electrónico"
+                    android:inputType="textEmailAddress"
+                    android:padding="12dp"
+                    android:textColor="@android:color/black"
+                    android:textColorHint="#757575"
+                    tools:ignore="HardcodedText" />
+
+                <EditText
+                    android:id="@+id/editTextLoginPassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:layout_marginBottom="20dp"
+                    android:autofillHints="password"
+                    android:background="@android:color/white"
+                    android:hint="Contraseña"
+                    android:inputType="textPassword"
+                    android:padding="12dp"
+                    android:textColor="@android:color/black"
+                    android:textColorHint="#757575"
+                    tools:ignore="HardcodedText" />
+
+                <Button
+                    android:id="@+id/buttonLogin"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:backgroundTint="#03A9F4"
+                    android:onClick="Menu"
+                    android:text="INICIAR SESIÓN"
+                    android:textColor="@android:color/white"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:cornerRadius="8dp"
+                    tools:ignore="HardcodedText" />
+            </LinearLayout>
+
+            <!-- Contenedor para Registro -->
+            <LinearLayout
+                android:id="@+id/registerContainer"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:orientation="vertical"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tabLayout">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:text="Crear nueva cuenta"
+                    android:textColor="#FFFFFF"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    tools:ignore="HardcodedText" />
+
+                <EditText
+                    android:id="@+id/editTextRegisterName"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:layout_marginBottom="12dp"
+                    android:autofillHints="name"
+                    android:background="@android:color/white"
+                    android:hint="Nombre completo"
+                    android:inputType="textPersonName"
+                    android:padding="12dp"
+                    android:textColor="@android:color/black"
+                    android:textColorHint="#757575"
+                    tools:ignore="HardcodedText" />
+
+                <EditText
+                    android:id="@+id/editTextRegisterEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:layout_marginBottom="12dp"
+                    android:autofillHints="emailAddress"
+                    android:background="@android:color/white"
+                    android:hint="Correo electrónico"
+                    android:inputType="textEmailAddress"
+                    android:padding="12dp"
+                    android:textColor="@android:color/black"
+                    android:textColorHint="#757575"
+                    tools:ignore="HardcodedText" />
+
+                <EditText
+                    android:id="@+id/editTextRegisterPassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:layout_marginBottom="12dp"
+                    android:autofillHints="password"
+                    android:background="@android:color/white"
+                    android:hint="Contraseña"
+                    android:inputType="textPassword"
+                    android:padding="12dp"
+                    android:textColor="@android:color/black"
+                    android:textColorHint="#757575"
+                    tools:ignore="HardcodedText" />
+
+                <EditText
+                    android:id="@+id/editTextRegisterConfirmPassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:layout_marginBottom="20dp"
+                    android:autofillHints="password"
+                    android:background="@android:color/white"
+                    android:hint="Confirmar contraseña"
+                    android:inputType="textPassword"
+                    android:padding="12dp"
+                    android:textColor="@android:color/black"
+                    android:textColorHint="#757575"
+                    tools:ignore="HardcodedText" />
+
+                <Button
+                    android:id="@+id/buttonRegister"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:backgroundTint="#4CAF50"
+                    android:onClick="RegistrarUsuario"
+                    android:text="CREAR CUENTA"
+                    android:textColor="@android:color/white"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:cornerRadius="8dp"
+                    tools:ignore="HardcodedText" />
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
