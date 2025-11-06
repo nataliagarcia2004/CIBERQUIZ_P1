@@ -37,38 +37,64 @@
         android:id="@+id/textView7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="130dp"
+        android:layout_marginTop="100dp"
         android:fontFamily="@font/nueva_fuente"
         android:elevation="5dp"
         android:text="@string/puntos_titulo"
         android:textColor="#DED7D5"
         android:textSize="32sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@+id/puntuacionTextView"
-        app:layout_constraintStart_toStartOf="@+id/puntuacionTextView"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/puntuacionTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="252dp"
-        android:text="@string/puntos_texto_final"
-        android:elevation="5dp"
-        android:textColor="#009688"
-        android:textColorHighlight="#D7C6C6"
-        android:textSize="25sp"
-        app:layout_constraintBottom_toBottomOf="@+id/background_image"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textView7"
-        app:layout_constraintVertical_bias="0.242" />
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Puntuación de la ronda actual -->
+    <TextView
+        android:id="@+id/puntuacionRondaTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="@string/puntuacion_ronda"
+        android:elevation="5dp"
+        android:textColor="#FF9800"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textView7" />
+
+    <!-- Separador visual -->
+    <View
+        android:id="@+id/separador"
+        android:layout_width="200dp"
+        android:layout_height="2dp"
+        android:layout_marginTop="24dp"
+        android:background="#80FFFFFF"
+        android:elevation="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/puntuacionRondaTextView" />
+
+    <!-- Puntos totales acumulados -->
+    <TextView
+        android:id="@+id/puntosTotalesTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="@string/puntos_totales_acumulados"
+        android:elevation="5dp"
+        android:textColor="#4CAF50"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/separador" />
 
     <Button
         android:id="@+id/button12"
         android:layout_width="110dp"
         android:layout_height="60dp"
-        android:layout_marginTop="124dp"
+        android:layout_marginTop="80dp"
         android:backgroundTint="#808080"
         android:onClick="Puntos_Pregunta1"
         android:text="@string/boton_reiniciar_quiz"
@@ -78,13 +104,13 @@
         app:layout_constraintEnd_toStartOf="@+id/button13"
         app:layout_constraintHorizontal_bias="0.586"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/puntuacionTextView" />
+        app:layout_constraintTop_toBottomOf="@+id/puntosTotalesTextView" />
 
     <Button
         android:id="@+id/button13"
         android:layout_width="100dp"
         android:layout_height="60dp"
-        android:layout_marginTop="124dp"
+        android:layout_marginTop="80dp"
         android:layout_marginEnd="72dp"
         android:backgroundTint="#2196F3"
         android:onClick="Puntos_Menu"
@@ -93,5 +119,5 @@
         android:textColor="#FFFFFF"
         android:textSize="15sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/puntuacionTextView" />
+        app:layout_constraintTop_toBottomOf="@+id/puntosTotalesTextView" />
 </androidx.constraintlayout.widget.ConstraintLayout>

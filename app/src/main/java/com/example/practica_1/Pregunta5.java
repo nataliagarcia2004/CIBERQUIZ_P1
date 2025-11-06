@@ -15,6 +15,9 @@ import androidx.appcompat.app.AppCompatActivity;
 public class Pregunta5 extends AppCompatActivity {
     private static final String TAG = "Pregunta5";
     private int puntuacion = 0;
+    private int puntosTotales = 0;
+    private String email;
+    private String nombre;
     private MediaPlayer sonidoAcierto;
     private MediaPlayer sonidoError;
     private boolean respondido = false;
@@ -26,8 +29,12 @@ public class Pregunta5 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pregunta5);
 
+        // Obtener datos del Intent
         Intent intent = getIntent();
         puntuacion = intent.getIntExtra("puntuacion", 0);
+        puntosTotales = intent.getIntExtra("puntos_totales", 0);
+        email = intent.getStringExtra("email");
+        nombre = intent.getStringExtra("nombre");
 
         // Inicializar los MediaPlayer con los sonidos
         try {
@@ -104,6 +111,9 @@ public class Pregunta5 extends AppCompatActivity {
             listViewOpciones.postDelayed(() -> {
                 Intent i = new Intent(this, Puntos.class);
                 i.putExtra("puntuacion", puntuacion);
+                i.putExtra("puntos_totales", puntosTotales);
+                i.putExtra("email", email);
+                i.putExtra("nombre", nombre);
                 startActivity(i);
                 overridePendingTransition(R.anim.fade_in_zoom, R.anim.fade_out_zoom);
                 finish();
@@ -136,6 +146,9 @@ public class Pregunta5 extends AppCompatActivity {
     public void Pregunta5_Puntos(View view) {
         Intent i = new Intent(this, Puntos.class);
         i.putExtra("puntuacion", puntuacion);
+        i.putExtra("puntos_totales", puntosTotales);
+        i.putExtra("email", email);
+        i.putExtra("nombre", nombre);
         startActivity(i);
         overridePendingTransition(R.anim.fade_in_zoom, R.anim.fade_out_zoom);
         finish();
@@ -143,6 +156,10 @@ public class Pregunta5 extends AppCompatActivity {
 
     public void Pregunta5_Menu(View view) {
         Intent i = new Intent(this, Menu.class);
+        i.putExtra("puntuacion", puntuacion);
+        i.putExtra("puntos_totales", puntosTotales);
+        i.putExtra("email", email);
+        i.putExtra("nombre", nombre);
         startActivity(i);
         overridePendingTransition(R.anim.fade_in_zoom, R.anim.fade_out_zoom);
         finish();

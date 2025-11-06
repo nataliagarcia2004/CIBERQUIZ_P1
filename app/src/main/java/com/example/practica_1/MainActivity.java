@@ -1,6 +1,9 @@
 package com.example.practica_1;
 
+import android.content.ContentValues;
 import android.content.Intent;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
@@ -12,9 +15,12 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.snackbar.Snackbar;
 
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+
 public class MainActivity extends AppCompatActivity {
 
-    private int puntuacion;
+    private AdminSQLiteOpenHelper admin;
 
     // Pestañas
     private Button btnTabLogin, btnTabRegister;
@@ -32,8 +38,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Intent intent = getIntent();
-        puntuacion = intent.getIntExtra("puntuacion", puntuacion);
+        // Inicializar el administrador de base de datos
+        admin = new AdminSQLiteOpenHelper(this);
 
         // Inicializar pestañas
         btnTabLogin = findViewById(R.id.btnTabLogin);
@@ -105,8 +111,28 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private boolean esPasswordSegura(String password) {
-        // Al menos 6 caracteres
         return password.length() >= 6;
+    }
+
+    // ==================== MÉTODO PARA HASHEAR CONTRASEÑA ====================
+
+    private String hashPassword(String password) {
+        try {
+            MessageDigest digest = MessageDigest.getInstance("SHA-256");
+            byte[] hash = digest.digest(password.getBytes());
+            StringBuilder hexString = new StringBuilder();
+
+            for (byte b : hash) {
+                String hex = Integer.toHexString(0xff & b);
+                if (hex.length() == 1) hexString.append('0');
+                hexString.append(hex);
+            }
+
+            return hexString.toString();
+        } catch (NoSuchAlgorithmException e) {
+            e.printStackTrace();
+            return password; // En caso de error, devolver password sin hashear
+        }
     }
 
     // ==================== MÉTODO DE LOGIN ====================
@@ -130,17 +156,49 @@ public class MainActivity extends AppCompatActivity {
             return;
         }
 
-        // TODO: Aquí validarás con la base de datos
-        // Por ahora, simulamos login exitoso
+        // Abrir base de datos en modo lectura
+        SQLiteDatabase db = admin.getReadableDatabase();
 
-        mostrarSnackbarExito(view, "Sesión iniciada correctamente");
+        // Hashear la contraseña ingresada
+        String hashedPassword = hashPassword(password);
 
-        view.postDelayed(() -> {
-            Intent i = new Intent(this, Menu.class);
-            i.putExtra("puntuacion", puntuacion);
-            startActivity(i);
-            overridePendingTransition(R.anim.fade_in_zoom, R.anim.fade_out_zoom);
-        }, 1500);
+        // Consultar si existe el usuario con ese email y contraseña
+        Cursor cursor = db.query(
+                AdminSQLiteOpenHelper.TABLE_USUARIOS,
+                new String[]{AdminSQLiteOpenHelper.COLUMN_EMAIL,
+                        AdminSQLiteOpenHelper.COLUMN_NOMBRE,
+                        AdminSQLiteOpenHelper.COLUMN_PUNTOS_TOTALES},
+                AdminSQLiteOpenHelper.COLUMN_EMAIL + "=? AND " +
+                        AdminSQLiteOpenHelper.COLUMN_PASSWORD + "=?",
+                new String[]{email, hashedPassword},
+                null, null, null
+        );
+
+        if (cursor.moveToFirst()) {
+            // Usuario encontrado - Login exitoso
+            String nombreUsuario = cursor.getString(1);
+            int puntosTotales = cursor.getInt(2);
+
+            cursor.close();
+            db.close();
+
+            mostrarSnackbarExito(view, "¡Bienvenido " + nombreUsuario + "!");
+
+            view.postDelayed(() -> {
+                Intent i = new Intent(this, Menu.class);
+                i.putExtra("email", email);
+                i.putExtra("nombre", nombreUsuario);
+                i.putExtra("puntos_totales", puntosTotales);
+                i.putExtra("puntuacion", 0); // Puntuación de la ronda actual
+                startActivity(i);
+                overridePendingTransition(R.anim.fade_in_zoom, R.anim.fade_out_zoom);
+            }, 1500);
+        } else {
+            // Usuario no encontrado o contraseña incorrecta
+            cursor.close();
+            db.close();
+            mostrarSnackbarError(view, "Credenciales incorrectas");
+        }
     }
 
     // ==================== MÉTODO DE REGISTRO ====================
@@ -190,18 +248,61 @@ public class MainActivity extends AppCompatActivity {
             return;
         }
 
-        // TODO: Aquí guardarás el usuario en la base de datos
-        // Por ahora, simulamos registro exitoso
+        // Abrir base de datos en modo escritura
+        SQLiteDatabase db = admin.getWritableDatabase();
 
-        mostrarSnackbarExito(view, "¡Cuenta creada exitosamente! Iniciando sesión...");
+        // Verificar si el email ya existe
+        Cursor cursor = db.query(
+                AdminSQLiteOpenHelper.TABLE_USUARIOS,
+                new String[]{AdminSQLiteOpenHelper.COLUMN_EMAIL},
+                AdminSQLiteOpenHelper.COLUMN_EMAIL + "=?",
+                new String[]{email},
+                null, null, null
+        );
 
-        // Cambiar a la pestaña de login después del registro
-        view.postDelayed(() -> {
-            // Opcional: Puedes llevar directamente al menú o mostrar el login
-            Intent i = new Intent(this, Menu.class);
-            i.putExtra("puntuacion", 0); // Usuario nuevo empieza con 0 puntos
-            startActivity(i);
-            overridePendingTransition(R.anim.fade_in_zoom, R.anim.fade_out_zoom);
-        }, 1500);
+        if (cursor.moveToFirst()) {
+            // El email ya está registrado
+            cursor.close();
+            db.close();
+            mostrarSnackbarError(view, "Este correo ya está registrado");
+            return;
+        }
+        cursor.close();
+
+        // Hashear la contraseña
+        String hashedPassword = hashPassword(password);
+
+        // Insertar nuevo usuario
+        ContentValues registro = new ContentValues();
+        registro.put(AdminSQLiteOpenHelper.COLUMN_NOMBRE, nombre);
+        registro.put(AdminSQLiteOpenHelper.COLUMN_EMAIL, email);
+        registro.put(AdminSQLiteOpenHelper.COLUMN_PASSWORD, hashedPassword);
+        registro.put(AdminSQLiteOpenHelper.COLUMN_PUNTOS_TOTALES, 0);
+
+        long resultado = db.insert(AdminSQLiteOpenHelper.TABLE_USUARIOS, null, registro);
+        db.close();
+
+        if (resultado != -1) {
+            // Registro exitoso
+            mostrarSnackbarExito(view, "¡Cuenta creada exitosamente! Iniciando sesión...");
+
+            // Limpiar campos
+            editTextRegisterName.setText("");
+            editTextRegisterEmail.setText("");
+            editTextRegisterPassword.setText("");
+            editTextRegisterConfirmPassword.setText("");
+
+            view.postDelayed(() -> {
+                Intent i = new Intent(this, Menu.class);
+                i.putExtra("email", email);
+                i.putExtra("nombre", nombre);
+                i.putExtra("puntos_totales", 0);
+                i.putExtra("puntuacion", 0);
+                startActivity(i);
+                overridePendingTransition(R.anim.fade_in_zoom, R.anim.fade_out_zoom);
+            }, 1500);
+        } else {
+            mostrarSnackbarError(view, "Error al crear la cuenta. Intenta de nuevo.");
+        }
     }
 }
