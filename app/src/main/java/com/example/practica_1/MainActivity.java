@@ -114,7 +114,7 @@ public class MainActivity extends AppCompatActivity {
         return password.length() >= 6;
     }
 
-    // ==================== MÉTODO PARA HASHEAR CONTRASEÑA ====================
+    // ==================== HASHEAR CONTRASEÑA ====================
 
     private String hashPassword(String password) {
         try {
@@ -135,7 +135,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    // ==================== MÉTODO DE LOGIN ====================
+    // ==================== LOGIN ====================
 
     public void Menu(View view) {
         String email = editTextLoginEmail.getText().toString().trim();
@@ -201,7 +201,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    // ==================== MÉTODO DE REGISTRO ====================
+    // ==================== REGISTRO ====================
 
     public void RegistrarUsuario(View view) {
         String nombre = editTextRegisterName.getText().toString().trim();
