@@ -49,21 +49,24 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <!-- Puntuación de la ronda actual -->
+
+    <!-- Separador visual -->
+
     <TextView
         android:id="@+id/puntuacionRondaTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:text="@string/puntuacion_ronda"
+        android:layout_marginTop="36dp"
         android:elevation="5dp"
+        android:text="@string/puntuacion_ronda"
         android:textColor="#FF9800"
         android:textSize="28sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.525"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/textView7" />
 
-    <!-- Separador visual -->
     <View
         android:id="@+id/separador"
         android:layout_width="200dp"
@@ -76,17 +79,19 @@
         app:layout_constraintTop_toBottomOf="@id/puntuacionRondaTextView" />
 
     <!-- Puntos totales acumulados -->
+
     <TextView
         android:id="@+id/puntosTotalesTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:text="@string/puntos_totales_acumulados"
+        android:layout_marginTop="204dp"
         android:elevation="5dp"
+        android:text="@string/puntos_totales_acumulados"
         android:textColor="#4CAF50"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.649"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/separador" />
 
