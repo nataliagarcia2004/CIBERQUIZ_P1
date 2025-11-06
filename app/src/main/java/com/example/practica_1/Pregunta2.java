@@ -18,7 +18,9 @@ public class Pregunta2 extends AppCompatActivity {
     private MediaPlayer sonidoAcierto;
     private MediaPlayer sonidoError;
     private boolean respondido = false;
-
+    private int puntosTotales;
+    private String email;
+    private String nombre;
     private RadioGroup radioGroupOpciones;
 
     @Override
@@ -29,6 +31,10 @@ public class Pregunta2 extends AppCompatActivity {
         // Recibe la puntuación desde la pregunta 1
         Intent intent = getIntent();
         puntuacion = intent.getIntExtra("puntuacion", 0);
+        puntosTotales = intent.getIntExtra("puntos_totales", 0);
+        email = intent.getStringExtra("email");
+        nombre = intent.getStringExtra("nombre");
+
 
         // Inicializar los MediaPlayer con los sonidos
         try {
@@ -91,6 +97,11 @@ public class Pregunta2 extends AppCompatActivity {
             radioGroupOpciones.postDelayed(() -> {
                 Intent i = new Intent(this, Pregunta3.class);
                 i.putExtra("puntuacion", puntuacion);
+                i.putExtra("puntos_totales", puntosTotales);
+                i.putExtra("email", email);
+                i.putExtra("nombre", nombre);
+                startActivity(i);
+
                 startActivity(i);
                 overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
                 finish();
@@ -126,6 +137,9 @@ public class Pregunta2 extends AppCompatActivity {
     public void Pregunta2_Pregunta3(View view) {
         Intent i = new Intent(this, Pregunta3.class);
         i.putExtra("puntuacion", puntuacion);
+        i.putExtra("puntos_totales", puntosTotales);
+        i.putExtra("email", email);
+        i.putExtra("nombre", nombre);
         startActivity(i);
         overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
         finish();
@@ -133,7 +147,12 @@ public class Pregunta2 extends AppCompatActivity {
 
     public void Pregunta2_Menu(View view) {
         Intent i = new Intent(this, Menu.class);
+        i.putExtra("puntuacion", puntuacion);
+        i.putExtra("puntos_totales", puntosTotales);
+        i.putExtra("email", email);
+        i.putExtra("nombre", nombre);
         startActivity(i);
+
         overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
         finish();
     }

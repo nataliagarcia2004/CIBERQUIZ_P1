@@ -18,6 +18,9 @@ public class Pregunta4 extends AppCompatActivity {
     private MediaPlayer sonidoAcierto;
     private MediaPlayer sonidoError;
     private boolean respondido = false;
+    private int puntosTotales;
+    private String email;
+    private String nombre;
 
     private Spinner spinnerOpciones;
 
@@ -28,6 +31,10 @@ public class Pregunta4 extends AppCompatActivity {
 
         Intent intent = getIntent();
         puntuacion = intent.getIntExtra("puntuacion", 0);
+        puntosTotales = intent.getIntExtra("puntos_totales", 0);
+        email = intent.getStringExtra("email");
+        nombre = intent.getStringExtra("nombre");
+
 
         // Inicializar los MediaPlayer con los sonidos
         try {
@@ -105,6 +112,10 @@ public class Pregunta4 extends AppCompatActivity {
             spinnerOpciones.postDelayed(() -> {
                 Intent i = new Intent(this, Pregunta5.class);
                 i.putExtra("puntuacion", puntuacion);
+                i.putExtra("puntos_totales", puntosTotales);
+                i.putExtra("email", email);
+                i.putExtra("nombre", nombre);
+
                 startActivity(i);
                 overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
                 finish();
@@ -138,6 +149,9 @@ public class Pregunta4 extends AppCompatActivity {
     public void Pregunta4_Pregunta5(View view) {
         Intent i = new Intent(this, Pregunta5.class);
         i.putExtra("puntuacion", puntuacion);
+        i.putExtra("puntos_totales", puntosTotales);
+        i.putExtra("email", email);
+        i.putExtra("nombre", nombre);
         startActivity(i);
         overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
         finish();
@@ -145,7 +159,12 @@ public class Pregunta4 extends AppCompatActivity {
 
     public void Pregunta4_Menu(View view) {
         Intent i = new Intent(this, Menu.class);
+        i.putExtra("puntuacion", puntuacion);
+        i.putExtra("puntos_totales", puntosTotales);
+        i.putExtra("email", email);
+        i.putExtra("nombre", nombre);
         startActivity(i);
+
         overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
         finish();
     }

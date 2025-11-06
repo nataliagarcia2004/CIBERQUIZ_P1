@@ -1,6 +1,8 @@
 package com.example.practica_1;
 
 import android.content.Intent;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 
@@ -20,24 +22,36 @@ public class Menu extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
 
-        // Configurar el Toolbar
-        Toolbar toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-
-        if (getSupportActionBar() != null) {
-            getSupportActionBar().setDisplayShowHomeEnabled(true);
-            getSupportActionBar().setLogo(R.mipmap.ic_launcher);
-            getSupportActionBar().setDisplayUseLogoEnabled(true);
-            getSupportActionBar().setTitle("CiberQuiz");
-        }
-
-        // Obtener datos del Intent
+        // Obtener datos del Intent PRIMERO
         Intent intent = getIntent();
         puntuacion = intent.getIntExtra("puntuacion", 0);
         puntosTotales = intent.getIntExtra("puntos_totales", 0);
         email = intent.getStringExtra("email");
         nombre = intent.getStringExtra("nombre");
+
+        // Ahora leer puntos reales desde BD solo si email es válido
+        if (email != null && !email.isEmpty()) {
+            AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this);
+            SQLiteDatabase db = admin.getReadableDatabase();
+
+            Cursor cursor = db.query(
+                    AdminSQLiteOpenHelper.TABLE_USUARIOS,
+                    new String[]{AdminSQLiteOpenHelper.COLUMN_PUNTOS_TOTALES},
+                    AdminSQLiteOpenHelper.COLUMN_EMAIL + "=?",
+                    new String[]{email},
+                    null, null, null
+            );
+
+            if (cursor.moveToFirst()) {
+                puntosTotales = cursor.getInt(0);
+            }
+
+            cursor.close();
+            db.close();
+        }
+
     }
+
 
     public void Menu_Pregunta1(View view) {
         Intent i = new Intent(this, Pregunta1.class);

@@ -83,6 +83,7 @@ public class Puntos extends AppCompatActivity {
         i.putExtra("puntos_totales", puntosTotales);
         i.putExtra("puntuacion", 0);
         startActivity(i);
+        finish();
         overridePendingTransition(R.anim.fade_in_zoom, R.anim.fade_out_zoom);
     }
 }
