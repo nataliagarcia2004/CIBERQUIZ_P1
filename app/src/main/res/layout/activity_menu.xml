@@ -6,6 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Menu">
+
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
@@ -30,93 +31,102 @@
         android:src="@drawable/fondo_menu2"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="32dp"
         android:fontFamily="@font/nueva_fuente"
         android:text="@string/menu_titulo"
         android:textColor="#CDE9EB"
         android:textSize="48sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.137" />
+        app:layout_constraintTop_toBottomOf="@id/toolbar" />
 
+    <!-- Contenedor central para los botones principales -->
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" />
+
+    <!-- Botón principal: Empezar Quiz -->
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="0dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="80dp"
+        android:backgroundTint="#2196F3"
+        android:elevation="8dp"
+        android:onClick="Menu_Pregunta1"
+        android:text="@string/boton_empezar_quiz"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:cornerRadius="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textView"
+        app:layout_constraintWidth_percent="0.75" />
+
+    <!-- Botón: Instrucciones -->
+    <Button
+        android:id="@+id/buttonInstrucciones"
+        android:layout_width="0dp"
+        android:layout_height="65dp"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="#009688"
+        android:elevation="6dp"
+        android:onClick="AbrirInstrucciones"
+        android:text="Instrucciones"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        app:cornerRadius="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/button3"
+        app:layout_constraintWidth_percent="0.75" />
+
+    <!-- Botón: Ver Puntos -->
+    <Button
+        android:id="@+id/button16"
+        android:layout_width="0dp"
+        android:layout_height="65dp"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="#3F51B5"
+        android:elevation="6dp"
+        android:onClick="Puntos"
+        android:text="@string/boton_puntos"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        app:cornerRadius="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/buttonInstrucciones"
+        app:layout_constraintWidth_percent="0.75" />
+
+    <!-- Botón: Cerrar Sesión (parte inferior) -->
     <Button
         android:id="@+id/button4"
         android:layout_width="0dp"
-        android:layout_height="60dp"
-        android:layout_marginBottom="00dp"
+        android:layout_height="55dp"
+        android:layout_marginBottom="32dp"
         android:backgroundTint="#03A9F4"
+        android:elevation="4dp"
         android:onClick="SalirApp"
         android:text="@string/boton_cerrar_sesion"
         android:textColor="#FFFFFF"
         android:textSize="15sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/button16"
-        app:layout_constraintHorizontal_chainStyle="spread"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.412"
-        app:layout_constraintWidth_percent="0.3" />
-
-    <Button
-        android:id="@+id/button16"
-        android:layout_width="0dp"
-        android:layout_height="60dp"
-        android:layout_marginBottom="00dp"
-        android:backgroundTint="#3F51B5"
-        android:onClick="Puntos"
-        android:text="@string/boton_puntos"
-        android:textColor="#FFFFFF"
-        android:textSize="15sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/button3"
-        app:layout_constraintStart_toEndOf="@+id/button4"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.916"
-        app:layout_constraintWidth_percent="0.3" />
-
-    <Button
-        android:id="@+id/button3"
-        android:layout_width="0dp"
-        android:layout_height="60dp"
-        android:layout_marginBottom="00dp"
-        android:backgroundTint="#2196F3"
-        android:onClick="Menu_Pregunta1"
-        android:text="@string/boton_empezar_quiz"
-        android:textColor="#FFFFFF"
-        android:textSize="15sp"
+        app:cornerRadius="12dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/button16"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.412"
-        app:layout_constraintWidth_percent="0.3" />
-    <Button
-        android:id="@+id/buttonInstrucciones"
-        android:layout_width="0dp"
-        android:layout_height="60dp"
-        android:layout_marginTop="20dp"
-        android:backgroundTint="#009688"
-        android:onClick="AbrirInstrucciones"
-        android:text="INSTRUCCIONES"
-        android:textColor="#FFFFFF"
-        android:textSize="15sp"
-        app:layout_constraintTop_toBottomOf="@id/button3"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintWidth_percent="0.6" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
