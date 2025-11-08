@@ -89,4 +89,13 @@ public class Menu extends AppCompatActivity {
         startActivity(i);
         overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
     }
+    public void AbrirRanking(View view) {
+        Intent i = new Intent(this, Ranking.class);
+        i.putExtra("puntuacion", puntuacion);
+        i.putExtra("puntos_totales", puntosTotales);
+        i.putExtra("email", email);
+        i.putExtra("nombre", nombre);
+        startActivity(i);
+        overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+    }
 }
