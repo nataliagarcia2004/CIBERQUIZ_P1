@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="16dp"
+    android:background="@drawable/foto_musica"> <!-- ⭐ FONDO NUEVO -->
+
+    <!-- PORTADA -->
+    <ImageView
+        android:id="@+id/imgPortada"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:src="@drawable/portada1"
+        android:contentDescription="@string/app_name" />
+
+    <!-- FILA DE BOTONES -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:layout_marginTop="40dp">
+
+        <ImageButton
+            android:id="@+id/btn_anterior"
+            android:layout_width="84dp"
+            android:layout_height="80dp"
+            android:background="@null"
+            android:src="@drawable/anterior" />
+
+        <ImageButton
+            android:id="@+id/btn_play"
+            android:layout_width="60dp"
+            android:layout_height="80dp"
+            android:background="@null"
+            android:src="@drawable/reproducir" />
+
+        <ImageButton
+            android:id="@+id/btn_detener"
+            android:layout_width="74dp"
+            android:layout_height="80dp"
+            android:background="@null"
+            android:src="@drawable/detener" />
+
+        <ImageButton
+            android:id="@+id/btn_repetir"
+            android:layout_width="83dp"
+            android:layout_height="80dp"
+            android:background="@null"
+            android:src="@drawable/repetir" />
+
+        <ImageButton
+            android:id="@+id/btn_siguiente"
+            android:layout_width="73dp"
+            android:layout_height="80dp"
+            android:background="@null"
+            android:src="@drawable/siguiente" />
+    </LinearLayout>
+
+    <!-- BOTÓN VOLVER AL MENÚ -->
+    <Button
+        android:id="@+id/btnVolverMenu"
+        android:layout_width="220dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="40dp"
+        android:backgroundTint="#03A9F4"
+        android:text="VOLVER AL MENÚ"
+        android:textColor="@android:color/white"
+        android:textStyle="bold"
+        android:textSize="15sp"
+        android:gravity="center" />
+
+</LinearLayout>

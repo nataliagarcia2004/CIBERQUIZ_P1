@@ -46,6 +46,10 @@
         <activity
             android:name=".Ranking"
             android:parentActivityName=".Menu" />
+        <activity
+            android:name=".ReproductorActivity"
+            android:exported="false" />
+
     </application>
 
 </manifest>
