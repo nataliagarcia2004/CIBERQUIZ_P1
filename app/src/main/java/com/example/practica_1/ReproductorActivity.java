@@ -15,6 +15,9 @@ public class ReproductorActivity extends AppCompatActivity {
     private String email;
     private String nombre;
 
+    // MediaPlayer GLOBAL para que no se destruya nunca
+    public static MediaPlayer mediaPlayer = null;
+
     int[] canciones = {
             R.raw.breeze,
             R.raw.disco,
@@ -38,16 +41,17 @@ public class ReproductorActivity extends AppCompatActivity {
     };
 
     int posicion = 0;
-    MediaPlayer mediaPlayer;
 
     ImageButton btn_play, btn_detener, btn_repetir, btn_anterior, btn_siguiente;
     ImageView imgPortada;
+    Button btnVolver;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_reproductor);
 
+        // Recibir datos
         Intent intent = getIntent();
         puntuacion = intent.getIntExtra("puntuacion", 0);
         puntosTotales = intent.getIntExtra("puntos_totales", 0);
@@ -55,71 +59,59 @@ public class ReproductorActivity extends AppCompatActivity {
         nombre = intent.getStringExtra("nombre");
 
         imgPortada = findViewById(R.id.imgPortada);
-
         btn_play = findViewById(R.id.btn_play);
         btn_detener = findViewById(R.id.btn_detener);
         btn_repetir = findViewById(R.id.btn_repetir);
         btn_anterior = findViewById(R.id.btn_anterior);
         btn_siguiente = findViewById(R.id.btn_siguiente);
+        btnVolver = findViewById(R.id.btnVolverMenu);
 
-        mediaPlayer = MediaPlayer.create(this, canciones[posicion]);
+        // Crear MediaPlayer solo UNA VEZ
+        if (mediaPlayer == null) {
+            mediaPlayer = MediaPlayer.create(this, canciones[posicion]);
+        }
         imgPortada.setImageResource(portadas[posicion]);
 
-        btn_play.setOnClickListener(v -> {
-            if (!mediaPlayer.isPlaying()) {
-                mediaPlayer.start();
-            }
-        });
+        // PLAY
+        btn_play.setOnClickListener(v -> mediaPlayer.start());
 
-        btn_detener.setOnClickListener(v -> {
-            if (mediaPlayer.isPlaying()) {
-                mediaPlayer.stop();
-                mediaPlayer = MediaPlayer.create(this, canciones[posicion]);
-            }
-        });
+        // PAUSA
+        btn_detener.setOnClickListener(v -> mediaPlayer.pause());
 
-        btn_repetir.setOnClickListener(v -> {
-            mediaPlayer.setLooping(!mediaPlayer.isLooping());
-        });
+        // LOOP
+        btn_repetir.setOnClickListener(v ->
+                mediaPlayer.setLooping(!mediaPlayer.isLooping())
+        );
 
+        // SIGUIENTE
         btn_siguiente.setOnClickListener(v -> {
-            if (posicion < canciones.length - 1)
-                posicion++;
-            else
-                posicion = 0;
+            posicion = (posicion + 1) % canciones.length;
             cambiarCancion();
         });
 
+        // ANTERIOR
         btn_anterior.setOnClickListener(v -> {
-            if (posicion > 0)
-                posicion--;
-            else
-                posicion = canciones.length - 1;
+            posicion = (posicion - 1 + canciones.length) % canciones.length;
             cambiarCancion();
         });
-        Button btnVolver = findViewById(R.id.btnVolverMenu);
 
+        // VOLVER SIN finish()
         btnVolver.setOnClickListener(v -> {
-            finish(); // vuelve al menú
+            Intent i = new Intent(this, Menu.class);
+            i.putExtra("email", email);
+            i.putExtra("nombre", nombre);
+            i.putExtra("puntos_totales", puntosTotales);
+            i.putExtra("puntuacion", puntuacion);
+            startActivity(i);
         });
-
-
     }
 
     private void cambiarCancion() {
-        if (mediaPlayer.isPlaying())
+        if (mediaPlayer != null) {
             mediaPlayer.stop();
-
+        }
         mediaPlayer = MediaPlayer.create(this, canciones[posicion]);
         mediaPlayer.start();
         imgPortada.setImageResource(portadas[posicion]);
-    }
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        if (mediaPlayer != null) {
-            mediaPlayer.release();
-        }
     }
 }
