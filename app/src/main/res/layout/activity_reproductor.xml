@@ -5,7 +5,7 @@
     android:orientation="vertical"
     android:gravity="center"
     android:padding="16dp"
-    android:background="@drawable/foto_musica"> <!-- ⭐ FONDO NUEVO -->
+    android:background="@drawable/foto_musica">
 
     <!-- PORTADA -->
     <ImageView
@@ -13,11 +13,11 @@
         android:layout_width="250dp"
         android:layout_height="250dp"
         android:src="@drawable/portada1"
-        android:contentDescription="@string/app_name" />
+        android:contentDescription="portada" />
 
     <!-- FILA DE BOTONES -->
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
         android:orientation="horizontal"
@@ -25,37 +25,47 @@
 
         <ImageButton
             android:id="@+id/btn_anterior"
-            android:layout_width="84dp"
-            android:layout_height="80dp"
+            android:layout_width="65dp"
+            android:layout_height="65dp"
             android:background="@null"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
             android:src="@drawable/anterior" />
 
         <ImageButton
             android:id="@+id/btn_play"
-            android:layout_width="60dp"
-            android:layout_height="80dp"
+            android:layout_width="65dp"
+            android:layout_height="65dp"
             android:background="@null"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
             android:src="@drawable/reproducir" />
 
         <ImageButton
             android:id="@+id/btn_detener"
-            android:layout_width="74dp"
-            android:layout_height="80dp"
+            android:layout_width="65dp"
+            android:layout_height="65dp"
             android:background="@null"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
             android:src="@drawable/detener" />
 
         <ImageButton
             android:id="@+id/btn_repetir"
-            android:layout_width="83dp"
-            android:layout_height="80dp"
+            android:layout_width="65dp"
+            android:layout_height="65dp"
             android:background="@null"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
             android:src="@drawable/repetir" />
 
         <ImageButton
             android:id="@+id/btn_siguiente"
-            android:layout_width="73dp"
-            android:layout_height="80dp"
+            android:layout_width="65dp"
+            android:layout_height="65dp"
             android:background="@null"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
             android:src="@drawable/siguiente" />
     </LinearLayout>
 
