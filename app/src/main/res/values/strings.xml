@@ -1,6 +1,13 @@
 <resources>
     <string name="app_name">CiberQuiz</string>
     <!-- Strings used for fragments for navigation -->
+    <string name="portada_album">Portada del álbum</string>
+    <string name="boton_cancion_anterior">Canción anterior</string>
+    <string name="boton_reproducir">Reproducir música</string>
+    <string name="boton_detener">Detener música</string>
+    <string name="boton_repetir">Repetir canción</string>
+    <string name="boton_cancion_siguiente">Siguiente canción</string>
+    <string name="volver_al_menu">VOLVER AL MENÚ</string>
     <string name="puntuacion_ronda">Puntuación de la ronda</string>
     <string name="puntos_totales_acumulados">Puntos totales acumulados</string>
     <string name="first_fragment_label">First Fragment</string>

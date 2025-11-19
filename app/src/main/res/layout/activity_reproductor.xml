@@ -13,7 +13,7 @@
         android:layout_width="250dp"
         android:layout_height="250dp"
         android:src="@drawable/portada1"
-        android:contentDescription="portada" />
+        android:contentDescription="@string/portada_album" />
 
     <!-- FILA DE BOTONES -->
     <LinearLayout
@@ -30,7 +30,8 @@
             android:background="@null"
             android:adjustViewBounds="true"
             android:scaleType="fitCenter"
-            android:src="@drawable/anterior" />
+            android:src="@drawable/anterior"
+            android:contentDescription="@string/boton_cancion_anterior" />
 
         <ImageButton
             android:id="@+id/btn_play"
@@ -39,7 +40,8 @@
             android:background="@null"
             android:adjustViewBounds="true"
             android:scaleType="fitCenter"
-            android:src="@drawable/reproducir" />
+            android:src="@drawable/reproducir"
+            android:contentDescription="@string/boton_reproducir" />
 
         <ImageButton
             android:id="@+id/btn_detener"
@@ -48,7 +50,8 @@
             android:background="@null"
             android:adjustViewBounds="true"
             android:scaleType="fitCenter"
-            android:src="@drawable/detener" />
+            android:src="@drawable/detener"
+            android:contentDescription="@string/boton_detener" />
 
         <ImageButton
             android:id="@+id/btn_repetir"
@@ -57,7 +60,8 @@
             android:background="@null"
             android:adjustViewBounds="true"
             android:scaleType="fitCenter"
-            android:src="@drawable/repetir" />
+            android:src="@drawable/repetir"
+            android:contentDescription="@string/boton_repetir" />
 
         <ImageButton
             android:id="@+id/btn_siguiente"
@@ -66,7 +70,8 @@
             android:background="@null"
             android:adjustViewBounds="true"
             android:scaleType="fitCenter"
-            android:src="@drawable/siguiente" />
+            android:src="@drawable/siguiente"
+            android:contentDescription="@string/boton_cancion_siguiente" />
     </LinearLayout>
 
     <!-- BOTÓN VOLVER AL MENÚ -->
@@ -75,8 +80,8 @@
         android:layout_width="220dp"
         android:layout_height="55dp"
         android:layout_marginTop="40dp"
-        android:backgroundTint="#03A9F4"
-        android:text="VOLVER AL MENÚ"
+        android:backgroundTint="#1976D2"
+        android:text="@string/volver_al_menu"
         android:textColor="@android:color/white"
         android:textStyle="bold"
         android:textSize="15sp"
